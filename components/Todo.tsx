@@ -1,5 +1,9 @@
+import { TodoType } from '@/app/(dashboard)/todos/page';
 
-const Todo = ({ todo }) => {
+type TodoProps = {
+    todo: TodoType;
+}
+const Todo = ({ todo }: TodoProps) => {
   return (
     <div>{todo.content}</div>
   )

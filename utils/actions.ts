@@ -2,12 +2,18 @@
 import { revalidatePath } from "next/cache";
 import db from "./db";
 
-export const newTodo = async (formData) => {
-  const todo = await db.todo.create({
-    data: {
-        content: formData.get("todoContent"),
-    }
-  });
+export const newTodo = async (formData: FormData) => {
+    const newTodo = formData.get('todoContent') as string
 
-  revalidatePath("/todos")
+  if (newTodo) {
+    await db.todo.create({
+      data: {
+        content: newTodo,
+      },
+    })
+    revalidatePath('/todos')
+  }
 }
+
+
+

@@ -1,12 +1,17 @@
 "use client"
 
 import Todo from './Todo'
+import { TodoType } from '@/app/(dashboard)/todos/page';
 
-const TodoList = ({ todos }) => {
+type TodoListProps = {
+    todos: TodoType[];
+}
+
+const TodoList = ({ todos }: TodoListProps) => {
   return (
     <div>
       {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} />
+        <Todo key={Number(todo.id)} todo={todo} />
       ))}
     </div>
   )
