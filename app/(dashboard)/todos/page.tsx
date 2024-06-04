@@ -9,7 +9,7 @@ export type TodoType = {
 }
 
 const getData = async () => {
-    await new Promise((resolve, reject) => setTimeout(() => reject(), 2000))
+  //await new Promise((resolve, reject) => setTimeout(() => reject(), 2000))
   const todos = await db.todo.findMany({})
   return todos
 }
