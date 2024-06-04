@@ -1,7 +1,12 @@
+import TodoList from "@/components/TodoList"
 
-function DocsPage() {
+const DocsPage = () => {
   return (
+    <>
     <div>DocsPage</div>
+    <TodoList />
+    </>
+
   )
 }
 
