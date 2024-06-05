@@ -4,7 +4,6 @@ const DocsPage = () => {
   return (
     <>
     <div>DocsPage</div>
-    <TodoList />
     </>
 
   )
